@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskFlow - Project Management</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-brand">📋 TaskFlow</div>
+  <div class="nav-links">
+    <a href="/" class="active">Dashboard</a>
+    <a href="/projects">Projects</a>
+    <a href="/kanban">Kanban</a>
+    <a href="/calendar">Calendar</a>
+    <a href="/admin">Admin</a>
+  </div>
+  <div class="nav-user">
+    <span id="userName">User</span>
+    <button onclick="logout()" class="btn btn-sm">Logout</button>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="hero">
+    <h1>📋 TaskFlow</h1>
+    <p>Manage projects, track tasks, collaborate with your team — simple & powerful.</p>
+  </section>
+
+  <section class="stats-grid">
+    <div class="stat-card blue"><h3>📁 Projects</h3><p id="statProjects">0</p></div>
+    <div class="stat-card orange"><h3>📝 Total Tasks</h3><p id="statTasks">0</p></div>
+    <div class="stat-card green"><h3>✅ Completed</h3><p id="statDone">0</p></div>
+    <div class="stat-card red"><h3>🔥 Overdue</h3><p id="statOverdue">0</p></div>
+  </section>
+
+  <div class="two-col">
+    <section class="section">
+      <div class="section-header">
+        <h2>📁 Active Projects</h2>
+        <button class="btn btn-primary" onclick="openProjectModal()">+ New Project</button>
+      </div>
+      <div id="projectsList" class="card-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>📝 Recent Tasks</h2>
+        <button class="btn btn-primary" onclick="openTaskModal()">+ New Task</button>
+      </div>
+      <div id="tasksList" class="list"></div>
+    </section>
+  </div>
+
+  <!-- Admin Panel -->
+  <div id="adminModal" class="modal">
+    <div class="modal-content modal-lg">
+      <span class="close" onclick="closeAdmin()">&times;</span>
+      <h2>⚙️ Admin Panel</h2>
+      <div class="admin-tabs">
+        <button class="tab-btn active" onclick="showAdminTab('overview')">📊 Overview</button>
+        <button class="tab-btn" onclick="showAdminTab('users')">👥 Users</button>
+        <button class="tab-btn" onclick="showAdminTab('projects')">📁 Projects</button>
+        <button class="tab-btn" onclick="showAdminTab('reports')">📈 Reports</button>
+      </div>
+      <div id="adminContent"></div>
+    </div>
+  </div>
+</main>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>

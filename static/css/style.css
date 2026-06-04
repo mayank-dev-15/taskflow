@@ -1,0 +1,65 @@
+/* TaskFlow - Project Management Styles */
+:root{--primary:#6C63FF;--primary-dark:#5A52D5;--blue:#3B82F6;--orange:#F97316;--green:#22C55E;--red:#EF4444;--bg:#F8FAFC;--card:#FFFFFF;--text:#1E293B;--text-light:#64748B;--border:#E2E8F0;--radius:12px;--shadow:0 1px 3px rgba(0,0,0,0.1);--shadow-lg:0 10px 15px -3px rgba(0,0,0,0.1)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.navbar{background:var(--card);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+.nav-brand{font-size:1.4rem;font-weight:700;color:var(--primary)}
+.nav-links{display:flex;gap:0.5rem}
+.nav-links a{padding:0.5rem 1rem;text-decoration:none;color:var(--text-light);border-radius:8px;transition:all 0.2s;font-weight:500}
+.nav-links a:hover,.nav-links a.active{background:var(--primary);color:white}
+.nav-user{display:flex;align-items:center;gap:1rem}
+.container{max-width:1200px;margin:0 auto;padding:2rem}
+.hero{text-align:center;padding:2rem;margin-bottom:2rem;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;border-radius:var(--radius);box-shadow:var(--shadow-lg)}
+.hero h1{font-size:2rem;margin-bottom:0.5rem}
+.hero p{opacity:0.9}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:2rem}
+.stat-card{background:var(--card);padding:1.5rem;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);text-align:center}
+.stat-card.blue{border-top:4px solid var(--blue)}
+.stat-card.orange{border-top:4px solid var(--orange)}
+.stat-card.green{border-top:4px solid var(--green)}
+.stat-card.red{border-top:4px solid var(--red)}
+.stat-card h3{font-size:0.85rem;color:var(--text-light);margin-bottom:0.5rem}
+.stat-card p{font-size:2rem;font-weight:700}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.section{margin-bottom:2rem}
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.section-header h2{font-size:1.3rem}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.card{background:var(--card);padding:1.5rem;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);transition:transform 0.2s;cursor:pointer}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.card h3{margin-bottom:0.5rem;color:var(--primary)}
+.card p{color:var(--text-light);font-size:0.9rem}
+.card .meta{display:flex;gap:0.5rem;margin-top:0.75rem}
+.list{display:flex;flex-direction:column;gap:0.75rem}
+.list-item{background:var(--card);padding:1rem 1.5rem;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.list-item .title{font-weight:600}
+.list-item .subtitle{font-size:0.85rem;color:var(--text-light)}
+.priority-high{border-left:4px solid var(--red)}
+.priority-medium{border-left:4px solid var(--orange)}
+.priority-low{border-left:4px solid var(--green)}
+.badge{padding:0.25rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:600}
+.badge-todo{background:#F1F5F9;color:#475569}
+.badge-progress{background:#DBEAFE;color:#1E40AF}
+.badge-done{background:#DCFCE7;color:#166534}
+.badge-overdue{background:#FEE2E2;color:#991B1B}
+.btn{padding:0.6rem 1.2rem;border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.9rem;transition:all 0.2s}
+.btn-primary{background:var(--primary);color:white}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-sm{padding:0.4rem 0.8rem;font-size:0.8rem}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center}
+.modal.active{display:flex}
+.modal-content{background:var(--card);padding:2rem;border-radius:var(--radius);max-width:700px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:var(--shadow-lg);position:relative}
+.modal-lg{max-width:900px}
+.close{position:absolute;top:1rem;right:1.5rem;font-size:1.5rem;cursor:pointer;color:var(--text-light)}
+.admin-tabs{display:flex;gap:0.5rem;margin-bottom:1.5rem;border-bottom:1px solid var(--border);padding-bottom:0.5rem}
+.tab-btn{padding:0.5rem 1rem;border:none;background:transparent;cursor:pointer;border-radius:8px;font-weight:500;color:var(--text-light)}
+.tab-btn.active{background:var(--primary);color:white}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;margin-bottom:0.3rem;font-weight:600;font-size:0.9rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.6rem;border:1px solid var(--border);border-radius:8px;font-size:0.9rem}
+.form-group textarea{min-height:80px;resize:vertical}
+.kanban-board{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1rem}
+.kanban-col{background:var(--bg);border-radius:var(--radius);padding:1rem;min-height:300px}
+.kanban-col h4{font-size:0.85rem;color:var(--text-light);margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.5px}
+.kanban-card{background:var(--card);padding:0.75rem;border-radius:8px;margin-bottom:0.5rem;box-shadow:var(--shadow);font-size:0.85rem;cursor:grab}
+@media(max-width:768px){.two-col{grid-template-columns:1fr}.nav-links{display:none}.stats-grid{grid-template-columns:1fr 1fr}.kanban-board{grid-template-columns:1fr 1fr}}
